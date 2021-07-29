@@ -1,0 +1,12 @@
+/* ul {
+  list-style-type: none;
+} */
+
+#books-info {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.charitable-works {
+
+}
