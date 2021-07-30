@@ -4,7 +4,27 @@
 
 #books-info {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 200px 500px;
+  grid-template-rows: repeat(24, 1fr);
+  grid-row-gap: 20px;
+  border: 5px solid black;
+}
+
+/* @media (max-width: 400px) {
+  #books-info {
+    width: 300px;
+  }
+} */
+
+#years {
+  border: 5px solid black;
+}
+
+#books {
+  border: 5px solid black;
+}
+
+.long-string {
 }
 
 .charitable-works {
