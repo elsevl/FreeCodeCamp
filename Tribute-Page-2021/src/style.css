@@ -1,12 +1,11 @@
-/* ul {
+ul {
   list-style-type: none;
-} */
+}
 
 #books-info {
-  display: grid;
-  grid-template-columns: 200px 500px;
-  grid-template-rows: repeat(24, 1fr);
-  grid-row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: 5px solid black;
 }
 
@@ -16,15 +15,21 @@
   }
 } */
 
-#years {
+.books-container {
+  margin-bottom: 20px;
   border: 5px solid black;
 }
 
-#books {
-  border: 5px solid black;
+.year {
+
 }
 
-.long-string {
+.books {
+  margin-left: 10px;
+}
+
+.year, .books {
+  display: inline-block;
 }
 
 .charitable-works {
