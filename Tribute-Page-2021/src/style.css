@@ -2,36 +2,78 @@ ul {
   list-style-type: none;
 }
 
+header, .section-title {
+  text-align: center;
+}
+
+#img-div {
+  width: 55%;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+#img-caption {
+  text-align: center;
+}
+
 #books-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+/*   align-items: center; */
   border: 5px solid black;
 }
-
-/* @media (max-width: 400px) {
-  #books-info {
-    width: 300px;
-  }
-} */
 
 .books-container {
   margin-bottom: 20px;
   border: 5px solid black;
 }
 
-.year {
+.year, .books {
+  display: inline-block;
+    border: 2px solid red;
+}
 
+.year {
+  diplay: flex;
+  justify-content: flex-start;
+/*   align-items: flex-start; */
 }
 
 .books {
-  margin-left: 10px;
-}
-
-.year, .books {
-  display: inline-block;
+/*   margin-left: 10px; */
+  diplay: flex;
+  align-items: center;
 }
 
 .charitable-works {
 
+}
+
+footer {
+  text-align: center;
+}
+
+/* Responive code below
+ */
+@media (max-width: 500px) {
+  #img-div {
+    width: 100%;
+  }
+  
+  .year, .books {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .year {
+  }
+  
+  .books {
+    margin-left: 0px;
+  }
+  
 }
