@@ -13,23 +13,53 @@ html, body {
 #form-intro {
   text-align: center;
   border: 3px solid black;
+}
 
+#form-entries {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  width: 100%;
 }
 
 .entry {
+  display: flex;
+  flex-direction: row;
   margin-bottom: 10px;
+  border: 3px solid black;
 }
 
 .entry-title, .input-data {
-  display: inline-block;
+  border: 3px solid black;
+}
+
+.entry-title {
+  width: 40%;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.input-data {
+  width: 60%;
+  padding-left: 20px;
 }
 
 #radio-1, #radio-2, #radio-3 {
   display: inline-block;
 }
 
-.day-checkboxes {
-  
+/* #day-checkbox-div {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#car-checkbox-div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+} */
+
+.day-checkboxes, .car-checkboxes {
+  display: inline-block;
 }
 
 #submit {
@@ -52,6 +82,8 @@ html, body {
 }
 
 
+/* Instructions from Free Code Camp below:
+ */
 
 /* User Story #1: I can see a title with id="title" in H1 sized text.
 
