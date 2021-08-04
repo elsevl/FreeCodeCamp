@@ -1,0 +1,131 @@
+<html>
+  <head>
+  </head>
+  
+ <body>
+  <main>
+    <div id="survey-form">
+      <div id="form-intro">
+        <h1 id="title">Jones Lexus Dealership of Chicago</h1>
+        <h2>Appointment Request</h2>
+        <p id="description">Use the form below to request a time to test drive your next car</p>
+        <p class="sub-description">Fields marked with an asterisk * are required.</p>
+      </div>
+      
+      <div id="form-entries">
+        <div class="entry" id="name">
+          <div class="entry-title">
+            <h3 class="sub-title" id="name-label">Name*</h3>
+          </div>
+          <div class="input-data" id="name-input-data">
+            <input id="name-form" type="text" placeholder="Name" required>
+          </div>
+        </div>
+        
+        <div class="entry" id="salutation">
+          <div class="entry-title">
+            <h3 class="sub-title">Salutation</h3>
+          </div>
+          <div class="input-data" id="radio-buttons">
+            <div id="radio-1">
+            <label for="Mr.">Mr.</label>
+              <input type="radio" id="radio-button-1" value="Mr." name="salutation">
+            </div>
+            <div id="radio-2">
+            <label for="Mrs.">Mrs.</label>
+              <input type="radio" id="radio-button-2" value="Mrs." name="salutation">
+            </div>
+            <div id="radio-3">
+            <label for="Ms.">Ms.</label>
+              <input type="radio" id="radio-button-3" value="Ms." name="salutation">
+            </div>
+          </div>
+        </div>
+        
+        <div class="entry" id="email">
+          <div class="entry-title">
+            <h3 class="sub-title" id="email-label">E-mail*</h3>
+          </div>
+          <div class="input-data" id="email-input-data">
+            <input id="email-form" type="email" placeholder="E-mail address" required>
+          </div>
+        </div>
+        
+        <div class="entry" id="number">
+          <div class="entry-title">
+            <h3 class="sub-title" id="number-label">Phone number</h3>
+            <p class="sub-description">Enter numbers only</p>
+          </div>
+          <div class="input-data" id="phone-input-data">
+            <input id="phone-form" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="3121234567">
+          </div>
+        </div>
+        
+        <div class="entry" id="day">
+          <div class="entry-title">
+            <h3 class="sub-title">Preferred day</h3>
+          </div>
+          <div class="input-data" id="day-checkbox-div">
+            <div class="day-checkboxes"><label id="day1">Monday</label><input type="checkbox" for="day1"></div>
+            <div class="day-checkboxes"><label id="day2">Tuesday</label><input type="checkbox" for="day1"></div>
+            <div class="day-checkboxes"><label id="day3">Wednesday</label><input type="checkbox" for="day1"></div>
+            <div class="day-checkboxes"><label id="day4">Thursday</label><input type="checkbox" for="day1"></div>
+            <div class="day-checkboxes"><label id="day5">Friday</label><input type="checkbox" for="day1"></div>
+            <div class="day-checkboxes"><label id="day6">Saturday</label><input type="checkbox" for="day1"></div>
+            <div class="day-checkboxes"><label id="day7">Sunday</label><input type="checkbox" for="day1"></div>
+          </div>
+        </div>
+        
+        <div class="entry" id="time">
+          <div class="entry-title">
+            <h3 class="sub-title">Preferred appointment time</h3>
+          </div>
+          <div class="input-data" id="time-dropdown">
+            <label for="times"></label>
+            <select id="times" name="times">
+              <option value="morning">Morning</option>
+              <option value="afternoon">Afternoon</option>
+              <option value="evening">Evening</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="entry" id="car">
+          <div class="entry-title">
+            <h3 class="sub-title">Preferred Lexus model</h3>
+          </div>
+            <div class="input-data" id="car-checkbox-div">
+            <div class="car-checkboxes"><label id="car1">Sedan</label><input type="checkbox" for="car1"></div>
+            <div class="car-checkboxes"><label id="car2">SUV</label><input type="checkbox" for="car2"></div>
+            <div class="car-checkboxes"><label id="car3">Coupe</label><input type="checkbox" for="car3"></div>
+            <div class="car-checkboxes"><label id="car4">Hybrid</label><input type="checkbox" for="car4"></div>
+            <div class="car-checkboxes"><label id="car5">Performance</label><input type="checkbox" for="car5"></div>
+          </div>
+        </div>
+        
+        <div class="entry" id="comments">
+          <div class="entry-title">
+            <h3 class="sub-title">Comments</h3>
+          </div>
+          <div class="input-data" id="comment-div">
+            <textarea id="text-area">
+            </textarea>
+          </div>
+        </div>
+        
+        <div class="entry" id="submit">
+          <button>Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+  
+ <div id="footer">
+ <footer>
+   <p>Built and written by <a href="https://github.com/elsevl" target="_blank">Elizabeth S.</a></p>
+   </footer>
+   </div>
+
+  </body>
+</html>
