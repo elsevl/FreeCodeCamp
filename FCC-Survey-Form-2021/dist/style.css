@@ -12,59 +12,74 @@ html, body {
 
 #form-intro {
   text-align: center;
-  border: 3px solid black;
-}
-
-#form-entries {
-  display: flex;
-  flex-direction: column;
-  border: 3px solid black;
-  width: 100%;
+  border-bottom: 3px solid black;
 }
 
 .entry {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
-  border: 3px solid black;
+  border-bottom: 3px solid black;
 }
 
-.entry-title, .input-data {
-  border: 3px solid black;
-}
-
+/* Need to resize font below to fix centering issues in smaller windows */
 .entry-title {
   width: 40%;
-  text-align: right;
-  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .input-data {
   width: 60%;
-  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+  border-left: 3px solid black;
+}
+
+#name-form, #email-form, #phone-form {
+  width: 50%;
+  border: 3px solid black;
+}
+
+#radio-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #radio-1, #radio-2, #radio-3 {
-  display: inline-block;
+  margin-right: 10px;
 }
 
-/* #day-checkbox-div {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+#day-checkbox-div, #car-checkbox-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
-#car-checkbox-div {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-} */
 
 .day-checkboxes, .car-checkboxes {
-  display: inline-block;
+  margin-right: 10px;
+}
+
+#comment-div {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#text-area {
+  width: 90%;
+  height: 60px;
+  border: 3px solid black;
 }
 
 #submit {
-  text-align: center;
+  justify-content: center;
   margin-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: none;
 }
 
 #footer {
@@ -79,6 +94,28 @@ html, body {
 
  #footer a {
   color: blue;
+}
+
+
+/* Responsive code below:
+ */
+
+@media (max-width: 800px) {
+  
+  #survey-form, #name-form, #email-form, #phone-form {
+    width: 90%;
+  }
+  
+/*   .entry-title {
+    align-items: center;
+} */
+  
+  .input-data {
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+  }
+  
 }
 
 
