@@ -2,26 +2,36 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0px;
+  background-color: #e8eaed;
 }
 
 #survey-form {
   width: 50%;
   border: 3px solid black;
+  background-color: white;
   margin: 20px auto;
+  font-family: 'Georama', sans-serif;
 }
 
 #form-intro {
   text-align: center;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid #cacccf;
+}
+
+h2 {
+  text-decoration: underline 3px solid #cacccf;
+}
+
+.sub-description {
+  font-size: 15px;
 }
 
 .entry {
   display: flex;
   flex-direction: row;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid #cacccf;
 }
 
-/* Need to resize font below to fix centering issues in smaller windows */
 .entry-title {
   width: 40%;
   display: flex;
@@ -30,18 +40,23 @@ html, body {
   align-items: center;
 }
 
+h3 {
+  font-size: 20px;
+}
+
 .input-data {
   width: 60%;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-left: 10px;
-  border-left: 3px solid black;
+  border-left: 3px solid #cacccf;
 }
 
-#name-form, #email-form, #phone-form {
+#name-form, #email-form, #phone-form, #times {
   width: 50%;
-  border: 3px solid black;
+  border: 3px solid #909396;
+  font-family: 'Georama', sans-serif;
 }
 
 #radio-buttons {
@@ -72,7 +87,7 @@ html, body {
 #text-area {
   width: 90%;
   height: 60px;
-  border: 3px solid black;
+  border: 3px solid #cacccf;
 }
 
 #submit {
@@ -80,6 +95,14 @@ html, body {
   margin-bottom: 20px;
   padding-top: 20px;
   border-bottom: none;
+}
+
+button {
+  width: 50%;
+  padding: 8px;
+  color: white;
+  background-color: black;
+  font-family: 'Georama', sans-serif;
 }
 
 #footer {
@@ -102,18 +125,23 @@ html, body {
 
 @media (max-width: 800px) {
   
-  #survey-form, #name-form, #email-form, #phone-form {
+  #survey-form, #name-form, #email-form, #phone-form, #times {
     width: 90%;
+    text-align: center;
   }
   
-/*   .entry-title {
-    align-items: center;
-} */
+  h3 {
+    font-size: 16px;
+  }
   
   .input-data {
     align-items: center;
     justify-content: center;
     padding-left: 0;
+  }
+  
+  option {
+    text-align: center;
   }
   
 }
