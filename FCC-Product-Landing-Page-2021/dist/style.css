@@ -1,5 +1,6 @@
 html, body {
   margin: 0;
+  padding: 0;
   height: 100%;
   width: 100%;
 }
@@ -10,6 +11,16 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid #EFEEED;
+}
+
+#header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #header-img {
@@ -17,16 +28,189 @@ html, body {
   width: 150px;
 }
 
+#navbar {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+
+.navlink {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.navlink:hover {
+  color: grey;
+}
+
 main {
-  margin-top: 5em;
+  margin-top: 150px;
+  margin-bottom: 75px;
+}
+
+#about {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+#about-section1 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#mission-statement1, #mission-statement2 {
+  width: 75%;
+}
+
+#mission-statement1 {
+  font-size: 50px;
+}
+
+#about-section2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-picture {
+  width: 80%;
+}
+
+#video {
+  margin-top: 40px;
+  text-align: center;
+}
+
+#pricing {
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+#pricing-boxes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid black;
+}
+
+#pricing-1, #pricing-2, #pricing-3 {
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  border: 2px solid black;
 }
 
 #contact {
   text-align: center;
+  margin-top: 40px;
 }
-/* #name-input, #email-input {
-  width: 
-} */
+
+footer {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 0;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  padding-left: 10px;
+  }
+
+footer a {
+  color: white;
+}
+
+
+/* Responsive code below
+ */
+@media (max-width: 1000px) {
+  #about-picture {
+    width: 95%;
+  }
+  
+  #name-input, #email-input, #submit-button {
+    margin-top: 15px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  #about, #header {
+    flex-direction: column;
+  }
+  
+  #header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+  #header-img {
+    width: 100px;
+    height: 75px;
+  }
+  
+  #navbar {
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .navlink {
+    align-items: space-between;
+    margin-left: 0;
+  }
+  
+  main {
+    margin-bottom: 50px;
+  }
+  
+  #about-section1, #about-section2 {
+    width: 100%;
+    text-align: center;
+  }
+  
+  #about-picture {
+    width: 95%;
+  }
+  
+  iframe {
+    width: 95%;
+  }
+  
+  #pricing-1, #pricing-2, #pricing-3 {
+    display: block;
+    width: 75%;
+    text-align: center;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  
+  #name-input, #email-input {
+    width: 60%;
+  }
+  
+  #submit-button {
+    width: 40%;
+  }
+  
+}
 
 
 
