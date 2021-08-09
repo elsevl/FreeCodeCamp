@@ -10,6 +10,7 @@
 <!-- partial:index.partial.html -->
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   </head>
   
   <body>
@@ -18,10 +19,10 @@
       <img src="https://www.dropbox.com/s/vj3kejb1m10d685/mangrove1.png?raw=1" alt="Sequoia company logo" id="header-img">
       <h1>Sequoia Advisors</h1>
       </div>
-      <nav id="navbar">
-        <a href="#about" class="navlink">About</a>
-        <a href="#pricing" class="navlink">Pricing</a>
-        <a href="#contact" class="navlink">Contact</a>
+      <nav id="nav-bar">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
       </header>
       
@@ -36,8 +37,8 @@
           </div>
         </div>
         
-        <div id="video">
-          <iframe width="500" height="315" src="https://www.youtube.com/embed/9eEV6mwbLWY" alt="Video of a man in front of a white background talking about the role of business advisors">
+        <div id="video-div">
+          <iframe width="500" height="315" src="https://www.youtube.com/embed/9eEV6mwbLWY" alt="Video of a man in front of a white background talking about the role of business advisors" id="video">
           </iframe>
         </div>
         
@@ -69,10 +70,10 @@
         
         <div id="contact">
           <h2>Contact us today</h2>
-          <form>
+          <form id="form" action="https://www.freecodecamp.com/email-submit">
             <input type="text" placeholder="Full name" id="name-input">
-            <input type="email" placeholder="Email" id="email-input">
-            <input type="submit" formaction="https://www.freecodecamp.com/email-submit" value="Contact now" id="submit-button">
+            <input type="email" placeholder="Email" id="email">
+            <input type="submit" id="submit" value="Contact now">
           </form>
         </div>
       </main>
