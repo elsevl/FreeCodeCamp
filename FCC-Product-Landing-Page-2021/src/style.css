@@ -229,10 +229,12 @@ footer a {
   
   #name-input, #email {
     width: 60%;
+    margin-top: 10px;
   }
   
   #submit {
     width: 40%;
+    margin-top: 10px;
   }
   
 }
