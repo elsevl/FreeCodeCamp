@@ -1,3 +1,43 @@
+html, body {
+  margin: 0;
+}
+
+#navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+/*   bottom: 0; */
+  height: 100%;
+  width: 250px;
+  border: 1px solid black;
+}
+
+#navbar-links {
+  width: 100%;
+}
+
+.navbar-link-div {
+  border: 1px solid black;
+  width: 100%;
+  height: 40px;
+}
+
+.nav-link {
+  vertical-align: center;
+}
+
+#main-doc {
+  margin-left: 260px;
+}
+
+
+/* Responsive code below
+ */
+@media (max-width: 800px;) {
+  
+}
+
+
 /* Free Code Camp user stories below
  */
 
