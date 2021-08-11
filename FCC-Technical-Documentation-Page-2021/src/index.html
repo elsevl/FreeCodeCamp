@@ -22,8 +22,8 @@
     </nav>
     
     <main id="main-doc">
-    <section class="main-section" id="What_is_Javascript">
-      <header>
+    <section class="main-section">
+      <header id="What_is_Javascript">
         <h2>What is Javascript?</h2>
         </header>
         <p>JavaScript is a cross-platform, object-oriented scripting language used to make webpages interactive (e.g., having complex animations, clickable buttons, popup menus, etc.).  There are also more advanced server side versions of JavaScript such as Node.js, which allow you to add more functionality to a website than downloading files (such as realtime collaboration between multiple computers). Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide programmatic control over them.</p>
@@ -55,18 +55,20 @@
         <h2>Hello World</h2>
       </header>
         <p>To get started with writing JavaScript, open the Web Console in multi-line mode, and write your first "Hello world" JavaScript code:</p>
+      <div class="code-div">
       <code>
-        (function(){
-  "use strict";
-  /* Start of your code */
-  function greetMe(yourName) {
-    alert('Hello ' + yourName);
-  }
-
-  greetMe('World');
-  /* End of your code */
-})();
+        (function(){ <br>
+  "use strict"; <br>
+  /* Start of your code */ <br>
+  function greetMe(yourName) { <br>
+    alert('Hello ' + yourName); <br>
+  } <br>
+<br>
+  greetMe('World'); <br>
+  /* End of your code */ <br>
+})(); <br>
       </code>
+      </div>
       </section>
       
       <section class="main-section" id="Variables_and_Declarations">
@@ -111,33 +113,290 @@
         </header>
         <p>A conditional statement is a set of commands that executes if a specified condition is true. JavaScript supports two conditional statements: if...else and switch.</p>
         <h3>if...else statement</h3>
-        <p></p>
+        <p>Use the if statement to execute a statement if a logical condition is true. Use the optional else clause to execute a statement if the condition is false. An if statement looks like this:</p>
+        <div class="code-div">
+        <code>
+          if (condition) { <br>
+  statement_1;<br>
+} <br>
+          else { <br>
+  statement_2; <br>
+} <br>
+        </code>
+        </div>
+        <p>
+          Here, the condition can be any expression that evaluates to true or false. (See Boolean for an explanation of what evaluates to true and false.). If condition evaluates to true, statement_1 is executed. Otherwise, statement_2 is executed. statement_1 and statement_2 can be any statement, including further nested if statements. You can also compound the statements using else if to have multiple conditions tested in sequence, as follows:
+        </p>
+        <div class="code-div">
+        <code>
+          if (condition_1) { <br>
+  statement_1; <br>
+} <br>
+          else if (condition_2) { <br>
+  statement_2; <br>
+} <br>
+          else if (condition_n) { <br>
+  statement_n; <br>
+} <br>
+          else { <br>
+  statement_last; <br>
+} <br>
+        </code>
+        </div>
+        <p>In the case of multiple conditions, only the first logical condition which evaluates to true will be executed. To execute multiple statements, group them within a block statement ({ … }).
+</p>
+        <h4>Best practice</h4>
+        <p>In general, it's good practice to always use block statements—especially when nesting if statements:
+</p>
+        <div class="code-div">
+        <code>
+          if (condition) { <br>
+  statement_1_runs_if_condition_is_true; <br>
+  statement_2_runs_if_condition_is_true; <br>
+} <br>
+          else { <br>
+  statement_3_runs_if_condition_is_false; <br>
+  statement_4_runs_if_condition_is_false; <br>
+} <br>
+        </code>
+        </div>
+        <p>It's unwise to use simple assignments in a conditional expression, because the assignment can be confused with equality when glancing over the code. For example, do not write code like this:</p>
+        <div class="code-div">
+        <code>
+          // Prone to being misread as "x == y" <br>
+if (x = y) { <br>
+  /* statements here */ <br>
+} <br>
+          </code>
+        </div>
+        <p>If you need to use an assignment in a conditional expression, a common practice is to put additional parentheses around the assignment, like this:</p>
+        <div class="code-div">
+        <code>
+          if ((x = y)) { <br>
+  /* statements here */ <br>
+} <br>
+        </code>
+        </div>
+        
         <h3>Switch statement</h3>
-        <p></p>
+        <p>A switch statement allows a program to evaluate an expression and attempt to match the expression's value to a case label. If a match is found, the program executes the associated statement. A switch statement looks like this:</p>
+        <div class="code-div">
+        <code>
+          switch (expression) { <br>
+  case label_1: <br>
+    statements_1 <br>
+    [break;] <br>
+  case label_2: <br>
+    statements_2 <br>
+    [break;] <br>
+    … <br>
+  default: <br>
+    statements_def <br>
+    [break;] <br>
+}
+        </code>
+        </div>
+        <p>JavaScript evaluates the above switch statement as follows:</p>
+        <ul>
+          <li>The program first looks for a case clause with a label matching the value of expression and then transfers control to that clause, executing the associated statements.</li>
+          <li>If no matching label is found, the program looks for the optional default clause:
+            <ul>
+              <li>If a default clause is found, the program transfers control to that clause, executing the associated statements.</li>
+              <li>If no default clause is found, the program resumes execution at the statement following the end of switch.</li>
+              <li>(By convention, the default clause is written as the last clause, but it does not need to be so.)</li>
+            </ul>
+          </li>
+        </ul>
+        
+        <h4>Break statements</h4>
+          <p>The optional break statement associated with each case clause ensures that the program breaks out of switch once the matched statement is executed, and then continues execution at the statement following switch. If break is omitted, the program continues execution inside the switch statement (and will evaluate the next case, and so on).</p>
+        <p>Example: In the following example, if fruittype evaluates to 'Bananas', the program matches the value with case 'Bananas' and executes the associated statement. When break is encountered, the program exits the switch and continues execution from the statement following switch. If break were omitted, the statement for case 'Cherries' would also be executed.</p>
+        <div class="code-div">
+        <code>
+          switch (fruittype) { <br>
+  case 'Oranges': <br>
+    console.log('Oranges are $0.59 a pound.'); <br>
+    break; <br>
+  case 'Apples': <br>
+    console.log('Apples are $0.32 a pound.'); <br>
+    break; <br>
+  case 'Bananas': <br>
+    console.log('Bananas are $0.48 a pound.'); <br>
+    break; <br>
+  case 'Cherries': <br>
+    console.log('Cherries are $3.00 a pound.'); <br>
+    break; <br>
+  case 'Mangoes': <br>
+    console.log('Mangoes are $0.56 a pound.'); <br>
+    break; <br>
+  case 'Papayas': <br>
+    console.log('Mangoes and papayas are $2.79 a pound.'); <br>
+    break; <br>
+  default: <br>
+   console.log(`Sorry, we are out of ${fruittype}.`); <br>
+} <br>
+console.log("Is there anything else you'd like?"); <br>
+        </code>
+        </div>
       </section>
   
       <section class="main-section" id="Loops_and_Iteration">
         <header>
           <h2>Loops and Iteration</h2>
+          <p>Loops offer a quick and easy way to do something repeatedly. This chapter of the JavaScript Guide introduces the different iteration statements available to JavaScript. You can think of a loop as a computerized version of the game where you tell someone to take X steps in one direction, then Y steps in another. For example, the idea "Go five steps to the east" could be expressed this way as a loop:</p>
         </header>
+        <div class="code-div">
+        <code>
+          for (let step = 0; step < 5; step++) { <br>
+  // Runs 5 times, with values of step 0 through 4. <br>
+  console.log('Walking east one step'); <br>
+} <br>
+        </code>
+        </div>
+          <p>There are many different kinds of loops, but they all essentially do the same thing: they repeat an action some number of times. (Note that it's possible that number could be zero!) The various loop mechanisms offer different ways to determine the start and end points of the loop. There are various situations that are more easily served by one type of loop over the others. The statements for loops provided in JavaScript are:</p>
+          <ul>
+            <li>for statement</li>
+            <li>do...while statement</li>
+            <li>while statement</li>
+            <li>labeled statement</li>
+            <li>break statement</li>
+            <li>continue statement</li>
+            <li>for...in statement</li>
+            <li>for...of statement</li>
+          </ul>
       </section>
       
       <section class="main-section" id="Functions">
         <header>
           <h2>Functions</h2>
         </header>
+        <p>Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to a procedure—a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output. To use a function, you must define it somewhere in the scope from which you wish to call it. See also the exhaustive <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions" target="_blank">reference chapter about JavaScript functions</a> to get to know the details.</p>
       </section>
       
       <section class="main-section" id="Closures">
         <header>
           <h2>Closures</h2>
         </header>
+        <p>You may nest a function within another function. The nested (inner) function is private to its containing (outer) function. It also forms a closure. A closure is an expression (most commonly, a function) that can have free variables together with an environment that binds those variables (that "closes" the expression). Since a nested function is a closure, this means that a nested function can "inherit" the arguments and variables of its containing function. In other words, the inner function contains the scope of the outer function.</p>
+        <p>To summarize:</p>
+        <ul>
+          <li>The inner function can be accessed only from statements in the outer function.</li>
+          <li>The inner function forms a closure: the inner function can use the arguments and variables of the outer function, while the outer function cannot use the arguments and variables of the inner function.</li>
+        </ul>
+        <p>The following example shows nested functions:</p>
+        <div class="code-div">
+          <code>
+            function addSquares(a, b) { <br>
+  function square(x) { <br>
+    return x * x; <br>
+  } <br>
+  return square(a) + square(b); <br>
+} <br>
+a = addSquares(2, 3); // returns 13 <br>
+b = addSquares(3, 4); // returns 25 <br>
+c = addSquares(4, 5); // returns 41 <br>
+        </code>
+        </div>
       </section>
       
       <section class="main-section" id="Objects">
         <header>
           <h2>Objects</h2>
         </header>
+        <p>Objects in JavaScript, just as in many other programming languages, can be compared to objects in real life. The concept of objects in JavaScript can be understood with real life, tangible objects. In JavaScript, an object is a standalone entity, with properties and type. Compare it with a cup, for example. A cup is an object, with properties. A cup has a color, a design, weight, a material it is made of, etc. The same way, JavaScript objects can have properties, which define their characteristics.</p>
+        <h3>Objects and properties</h3>
+        <p>A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. You access the properties of an object with a simple dot-notation:</p>
+        <div class="code-div">
+          <code>
+            objectName.propertyName
+          </code>
+        </div>
+        <p>Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let's create an object named myCar and give it properties named make, model, and year as follows:</p>
+        <div class="code-div">
+          <code>
+            var myCar = new Object(); <br>
+myCar.make = 'Ford'; <br>
+myCar.model = 'Mustang'; <br>
+myCar.year = 1969; <br>
+          </code>
+        </div>
+        <p>The above example could also be written using an object initializer, which is a comma-delimited list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}):</p>
+        <div class="code-div">
+          <code>
+            var myCar = { <br>
+    make: 'Ford', <br>
+    model: 'Mustang', <br>
+    year: 1969 <br>
+}; <br>
+            </div>
+          </code>
+          <p>Unassigned properties of an object are undefined (and not null).</p>
+          <div class="code-div">
+            <code>
+              myCar.color; // undefined
+            </code>
+        </div>
+        <p>Properties of JavaScript objects can also be accessed or set using a bracket notation. Objects are sometimes called associative arrays, since each property is associated with a string value that can be used to access it. So, for example, you could access the properties of the myCar object as follows:</p>
+        <div class="code-div">
+          <code>
+            myCar['make'] = 'Ford'; <br>
+myCar['model'] = 'Mustang'; <br>
+myCar['year'] = 1969; <br>
+          </code>
+        </div>
+        <p>An object property name can be any valid JavaScript string, or anything that can be converted to a string, including the empty string. However, any property name that is not a valid JavaScript identifier (for example, a property name that has a space or a hyphen, or that starts with a number) can only be accessed using the square bracket notation. This notation is also very useful when property names are to be dynamically determined (when the property name is not determined until runtime). Examples are as follows:</p>
+        <div class="code-div">
+          <code>
+            // four variables are created and assigned in a single go, <br>
+// separated by commas <br>
+var myObj = new Object(), <br>
+    str = 'myString', <br>
+    rand = Math.random(), <br>
+    obj = new Object(); <br>
+ <br>
+myObj.type              = 'Dot syntax'; <br>
+myObj['date created']   = 'String with space'; <br>
+myObj[str]              = 'String value'; <br>
+myObj[rand]             = 'Random Number'; <br>
+myObj[obj]              = 'Object'; <br>
+myObj['']               = 'Even an empty string'; <br>
+ <br>
+console.log(myObj); <br>
+          </code>
+        </div>
+        <p>Please note that all keys in the square bracket notation are converted to string unless they're Symbols, since JavaScript object property names (keys) can only be strings or Symbols (at some point, private names will also be added as the class fields proposal progresses, but you won't use them with [] form). For example, in the above code, when the key obj is added to the myObj, JavaScript will call the obj.toString() method, and use this result string as the new key. You can also access properties by using a string value that is stored in a variable:</p>
+        <div class="code-div">
+          <code>
+            var propertyName = 'make'; <br>
+myCar[propertyName] = 'Ford'; <br>
+<br>
+propertyName = 'model'; <br>
+myCar[propertyName] = 'Mustang'; <br>
+          </code>
+        </div>
+        <p>You can use the bracket notation with for...in to iterate over all the enumerable properties of an object. To illustrate how this works, the following function displays the properties of the object when you pass the object and the object's name as arguments to the function:</p>
+        <div class="code-div">
+          <code>
+            function showProps(obj, objName) { <br>
+  var result = ``; <br>
+  for (var i in obj) { <br>
+    // obj.hasOwnProperty() is used to filter out properties from the object's prototype chain <br>
+    if (obj.hasOwnProperty(i)) { <br>
+      result += `${objName}.${i} = ${obj[i]}\n`; <br>
+    } <br>
+  } <br>
+  return result; <br>
+} <br>
+          </code>
+        </div>
+        <p>So, the function call showProps(myCar, "myCar") would return the following:</p>
+        <div class="code-div">
+          <code>
+            myCar.make = Ford <br>
+myCar.model = Mustang <br>
+myCar.year = 1969 <br>
+          </code>
+        </div>
       </section>
   
     </main>
