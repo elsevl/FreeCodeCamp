@@ -1,8 +1,11 @@
-/* Make div height of viewport: height: 100vh;
- */
 html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+body {
+  margin-bottom: 100px;
 }
 
 nav {
@@ -10,7 +13,7 @@ nav {
   top: 0;
   width: 100%;
   height: 50px;
-  background-color: grey;
+  background-color: rgb(219, 219, 218, 0.75);
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -24,7 +27,7 @@ nav {
 }
 
 .nav-link:hover {
-  color: white;
+  color: #0C70D5;
 }
 
 #about-section {
@@ -45,6 +48,7 @@ nav {
 
 h1 {
   font-size: 60px;
+  text-align: center;
 }
 
 #header-description {
@@ -57,41 +61,113 @@ h1 {
 
 .header-subtext {
   margin: 20px;
+  text-align: center;
 }
 
 #projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 10px;
-  margin: 0 auto;
-  border: 1px solid black;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 100px;
+  column-gap: 22px;
+  align-items: space-around;
 }
 
 .project-tile {
   width: 400px;
   height: 300px;
+  margin: 0 auto;
 }
 
 .project-link {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  margin-bottom: 0;
   border: 1px solid black;
 }
 
-#contact-section {
+.project-description {
+  width: 100%;
+  height: 50px;
+  margin-top: 0;
+  text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-
-@media (max-width: 600px) {
-  
+  background-color: rgb(219, 219, 218, 0.75);
+  border: 1px solid black;
 }
 
 /* Responsive code below
  */
+@media(max-width: 850px) {
+  .project-tile {
+    width: 75%;
+    width: 75%;
+    margin: 0 auto;
+}
+}
+
+@media (max-width: 600px) {
+  nav {
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+  
+  .nav-link {
+    margin: 0;
+    margin-right: 5px;
+  }
+
+  #about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+  #header-description {
+    font-size: 20px;
+}
+
+  h1 {
+    font-size: 40px;
+  }
+  
+  #projects {
+    margin-bottom: 25px;
+  }
+  
+  #projects-grid {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-items: center;
+    align-items: center;
+}
+
+  .project-tile {
+    width: 95%;
+    width: 95%;
+    margin: 0 auto;
+}
+
+  .project-link {
+    object-fit: cover;
+    margin-bottom: 0;
+    border: 1px solid black;
+}
+
+  .project-description {
+    width: 100%;
+    height: 50px;
+    margin-top: 0;
+    border: 1px solid black;
+}
+}
 
 /* User Story #1: My portfolio should have a welcome section with an id of welcome-section.
 
